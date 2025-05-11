@@ -1,6 +1,7 @@
 package pl.rlnkoo.userservice.service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pl.rlnkoo.userservice.dto.RegisterRequest;
 import pl.rlnkoo.userservice.dto.UserResponse;
@@ -8,6 +9,7 @@ import pl.rlnkoo.userservice.model.User;
 import pl.rlnkoo.userservice.repository.UserRepository;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class UserService {
 
@@ -52,5 +54,10 @@ public class UserService {
         userResponse.setUpdatedAt(user.getUpdatedAt());
 
         return userResponse;
+    }
+
+    public Boolean existByUserId(String userId) {
+        log.info("Calling user validation API for userId: {}", userId);
+        return userRepository.existsById(userId);
     }
 }
