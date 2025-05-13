@@ -11,8 +11,11 @@ import pl.rlnkoo.aiservice.model.Activity;
 @RequiredArgsConstructor
 public class ActivityMessageListener {
 
+    private final ActivityAIService aiService;
+
     @RabbitListener(queues = "activity.queue")
     public void processActivity(Activity activity) {
         log.info("Received activity for processing: {}", activity.getId());
+        log.info("Generated Recommendation: {}", aiService.generateRecommendation(activity));
     }
 }
