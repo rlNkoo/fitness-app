@@ -1,4 +1,4 @@
-package pl.rlnkoo.userservice.dto;
+package pl.rlnkoo.gateway.user;
 
 import lombok.Data;
 
