@@ -82,11 +82,12 @@ The **Fitness-App** is a microservices-based web application designed to manage 
 ## 📂 Project Structure
 ```
 fitness-app/
-├── user-service/
+├── .idea/
 ├── activity-service/
 ├── ai-service/
 ├── config-server/
-├── eureka-server/
-├── api-gateway/
-├── common-lib/
-└── README.md
+├── eureka/
+├── gateway/
+├── user-service/
+├── README.md
+└── fitness-app.iml
